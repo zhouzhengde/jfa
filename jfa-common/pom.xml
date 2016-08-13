@@ -1,0 +1,83 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.lscsoft.jfa</groupId>
+        <artifactId>jfa</artifactId>
+        <version>1.0.0.ALPHA</version>
+    </parent>
+
+    <artifactId>jfa-common</artifactId>
+    <packaging>jar</packaging>
+
+    <name>jfa-common</name>
+    <url>http://maven.apache.org</url>
+
+    <properties>
+        <fastdfs.client.version>1.25.1-RELEASE</fastdfs.client.version>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.lscsoft.jfa</groupId>
+            <artifactId>jfa-runner</artifactId>
+            <version>1.0.0.ALPHA</version>
+        </dependency>
+
+        <!--S jfa-commons-->
+        <dependency>
+            <groupId>net.sf.jxls</groupId>
+            <artifactId>jxls-reader</artifactId>
+            <version>${jxls.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.sf.jxls</groupId>
+            <artifactId>jxls-core</artifactId>
+            <version>${jxls.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.sf.json-lib</groupId>
+            <artifactId>json-lib</artifactId>
+            <version>2.2.2</version>
+            <classifier>jdk15</classifier>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jayway.jsonpath</groupId>
+            <artifactId>json-path-assert</artifactId>
+            <version>${json.path.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.tobato</groupId>
+            <artifactId>fastdfs-client</artifactId>
+            <version>${fastdfs.client.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-ext-jdk15on</artifactId>
+            <version>1.54</version>
+        </dependency>
+        <!--E jfa-commons-->
+
+    </dependencies>
+
+    <build>
+        <finalName>jfa-common</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring.boot.version}</version>
+                <configuration>
+                    <mainClass>${start.class}</mainClass>
+                    <layout>JAR</layout>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/jfa.iml" filepath="$PROJECT_DIR$/jfa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jfa-app/jfa-app.iml" filepath="$PROJECT_DIR$/jfa-app/jfa-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jfa-common/jfa-common.iml" filepath="$PROJECT_DIR$/jfa-common/jfa-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jfa-configserver/jfa-configserver.iml" filepath="$PROJECT_DIR$/jfa-configserver/jfa-configserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jfa-data/jfa-data.iml" filepath="$PROJECT_DIR$/jfa-data/jfa-data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jfa-platform-res/jfa-platform-res.iml" filepath="$PROJECT_DIR$/jfa-platform-res/jfa-platform-res.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jfa-runner/jfa-runner.iml" filepath="$PROJECT_DIR$/jfa-runner/jfa-runner.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jfa-web/jfa-web.iml" filepath="$PROJECT_DIR$/jfa-web/jfa-web.iml" />
+    </modules>
+  </component>
+</project>
