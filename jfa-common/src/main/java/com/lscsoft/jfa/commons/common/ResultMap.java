@@ -32,7 +32,7 @@ public final class ResultMap {
     /**
      * 加和一个结果，其默认KEY为result
      *
-     * @param object
+     * @param object 直接对象
      */
     public static void put(Object object) {
         put("result", object);
@@ -62,7 +62,7 @@ public final class ResultMap {
      *
      * @param message String
      * @param e       Exception
-     * @return
+     * @return Map
      */
     public static Map<String, Object> failure(String message, Exception e) {
         put(Constants.REST_MESSAGE, message);
@@ -75,7 +75,7 @@ public final class ResultMap {
      * @param exceptionCode String 类似于:user.add.illegalArg
      * @param message       String
      * @param e             Exception
-     * @return
+     * @return Map
      */
     public static Map<String, Object> failure(String exceptionCode, String message, Exception e) {
         put(Constants.REST_CODE, exceptionCode);
@@ -88,8 +88,7 @@ public final class ResultMap {
     /**
      * 返回成功处理结果
      *
-     * @param
-     * @return
+     * @return Map
      */
 
     public static Map<String, Object> success() {
@@ -101,8 +100,8 @@ public final class ResultMap {
     /**
      * 返回失败处理结果
      *
-     * @param
-     * @return
+     * @param e Exception
+     * @return Map
      */
     public static Map<String, Object> failure(Exception e) {
         if (e != null) {
@@ -118,6 +117,9 @@ public final class ResultMap {
         return returnResult();
     }
 
+    /**
+     * @return Map
+     */
     private static Map<String, Object> returnResult() {
         Map<String, Object> rs = threadLocal.get();
         threadLocal.set(null);

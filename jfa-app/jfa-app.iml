@@ -10,7 +10,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="jfa-data" />
+    <orderEntry type="library" name="Maven: com.lsc-soft:jfa-data:1.0.0" level="project" />
     <orderEntry type="module" module-name="jfa-common" />
     <orderEntry type="module" module-name="jfa-runner" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context:4.2.5.RELEASE" level="project" />

@@ -19,7 +19,12 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.*;
 
-
+/**
+ * JSON操作工具
+ *
+ * @author Bond(China)
+ * @version 1.0.0
+ */
 public class JsonUtils {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(JsonUtils.class);

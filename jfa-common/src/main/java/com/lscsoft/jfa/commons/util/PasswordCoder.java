@@ -2,11 +2,9 @@ package com.lscsoft.jfa.commons.util;
 
 import org.apache.commons.codec.binary.Base64;
 
-import java.nio.charset.Charset;
 
 /**
- * @author Created by Admin on 2016/7/6.
- * @copyright ${copyright}
+ * @author Created by Bond(China) on 2016/7/6.
  */
 public final class PasswordCoder {
 
@@ -21,8 +19,8 @@ public final class PasswordCoder {
     /**
      * 加密
      *
-     * @param password
-     * @return
+     * @param password Input value
+     * @return The result already to encrypt.
      */
     public static String encrypt(String password) {
 
@@ -34,9 +32,9 @@ public final class PasswordCoder {
     /**
      * 加密
      *
-     * @param password
-     * @param key
-     * @return
+     * @param password Input value
+     * @param key      KEY
+     * @return The result already to encrypt.
      */
     public static String encrypt(String key, String password) {
 

@@ -2,9 +2,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.lscsoft.jfa</groupId>
+        <groupId>com.lsc-soft</groupId>
         <artifactId>jfa</artifactId>
-        <version>1.0.0.ALPHA</version>
+        <version>1.0.0</version>
     </parent>
 
     <artifactId>jfa-common</artifactId>
@@ -20,9 +20,9 @@
     <dependencies>
 
         <dependency>
-            <groupId>com.lscsoft.jfa</groupId>
+            <groupId>com.lsc-soft</groupId>
             <artifactId>jfa-runner</artifactId>
-            <version>1.0.0.ALPHA</version>
+            <version>${jfa.version}</version>
         </dependency>
 
         <!--S jfa-commons-->

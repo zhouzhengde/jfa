@@ -14,10 +14,10 @@ import java.security.Key;
 import java.security.Security;
 
 /**
- * AES��ȫ����ͨ���������
+ * AES安全编码通用组件工具
  *
- * @author ������
- * @version 1.0
+ * @author Bond(China)
+ * @version 1.0.0
  */
 public final class AESCoder {
 
@@ -36,21 +36,20 @@ public final class AESCoder {
     }
 
     /**
-     * ��Կ�㷨��
+     * 密钥算法名
      */
     public static final String KEY_ALGORITHM = "AES";
 
     /**
-     * ����/�����㷨 / ����ģʽ / ��䷽ʽ Java 7֧��PKCS5PADDEING
+     * 加密/解密算法 / 工作模式 / 填充方式 Java 7支持PKCS5PADDEING
      */
     public static final String CIPHER_ALGORITHM = "AES/ECB/PKCS7Padding";
 
     /**
-     * ת����Կ
+     * 转换密钥
      *
-     * @param key ��������Կ
-     * @return Key ���ܵ���Կ
-     * @throws Exception
+     * @param key 二进制密钥
+     * @return Key 加密的密钥
      */
     private static Key toKey(byte[] key) {
         SecretKey secretKey = new SecretKeySpec(key, KEY_ALGORITHM);
@@ -58,12 +57,11 @@ public final class AESCoder {
     }
 
     /**
-     * ����
+     * 解密
      *
-     * @param data �Ƚ�������
-     * @param key  ��Կ
-     * @return byte[] ���ܵ�����
-     * @throws Exception
+     * @param data 等解密数据
+     * @param key  密钥
+     * @return byte[] 解密的数据
      */
     public static byte[] decrypt(byte[] data, byte[] key) {
         try {
@@ -72,18 +70,17 @@ public final class AESCoder {
             cipher.init(Cipher.DECRYPT_MODE, k);
             return cipher.doFinal(data);
         } catch (Exception e) {
-            LOGGER.error("[����/����]", e);
+            LOGGER.error("[加密/解密]", e);
             return null;
         }
     }
 
     /**
-     * ����
+     * 加密
      *
-     * @param data �ȼ�������
-     * @param key  ��Կ
-     * @return byte[] ���ܺ������
-     * @throws Exception
+     * @param data 等加密数据
+     * @param key  密钥
+     * @return byte[] 加密后的数据
      */
     public static byte[] encrypt(byte[] data, byte[] key) {
         try {
@@ -92,16 +89,15 @@ public final class AESCoder {
             cipher.init(Cipher.ENCRYPT_MODE, k);
             return cipher.doFinal(data);
         } catch (Exception e) {
-            LOGGER.error("[����/����]", e);
+            LOGGER.error("[加密/解密]", e);
             return null;
         }
     }
 
     /**
-     * ������Կ
+     * 生成密钥
      *
-     * @return byte[] ��������Կ
-     * @throws Exception
+     * @return byte[] 二进制密钥
      */
     public static byte[] initKey() {
         try {
@@ -111,72 +107,68 @@ public final class AESCoder {
             return secretKey.getEncoded();
 
         } catch (Exception e) {
-            LOGGER.error("[������Կ]", e);
+            LOGGER.error("[生成密钥]", e);
             return null;
         }
     }
 
     /**
-     * ��ʼ����Կ
+     * 初始化密钥
      *
-     * @return
-     * @throws Exception
+     * @return String
      */
     public static String initKeyString() {
         return Base64.encodeBase64String(initKey());
     }
 
     /**
-     * ��ȡ��Կ
+     * 获取密钥
      *
-     * @param key
-     * @return
-     * @throws Exception
+     * @param key 密钥
+     * @return byte[]
      */
     public static byte[] getKey(String key) {
         return Base64.decodeBase64(key);
     }
 
     /**
-     * ����
+     * 解密
      *
-     * @param data
-     * @param key
-     * @return
-     * @throws Exception
+     * @param data 信息
+     * @param key  密钥
+     * @return byte[]
      */
     public static byte[] decrypt(byte[] data, String key) {
         return decrypt(data, getKey(key));
     }
 
     /**
-     * ����
+     * 加密
      *
-     * @param data
-     * @param key
-     * @return
-     * @throws Exception
+     * @param data 信息
+     * @param key  密钥
+     * @return byte[]
      */
     public static byte[] encrypt(byte[] data, String key) {
         return encrypt(data, getKey(key));
     }
 
     /**
-     * ժҪ����
+     * 摘要处理
      *
-     * @param data
-     * @return
+     * @param data 信息
+     * @return String
      */
     public static String shaHex(byte[] data) {
         return DigestUtils.md5Hex(data);
     }
 
     /**
-     * ��֤
+     * 验证
      *
-     * @param data
-     * @param messageDigest
-     * @return
+     * @param data          信息
+     * @param messageDigest 信息
+     * @return Boolean
      */
     public static boolean validate(byte[] data, String messageDigest) {
         return messageDigest.equals(shaHex(data));

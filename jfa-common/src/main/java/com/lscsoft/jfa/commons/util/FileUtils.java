@@ -13,7 +13,7 @@ import java.nio.channels.FileChannel;
 /**
  * 文件操作工具
  *
- * @author BondZhou
+ * @author Bond(China)
  */
 public final class FileUtils {
 
@@ -164,8 +164,9 @@ public final class FileUtils {
 
     /**
      * 读取文件
-     * @param file
-     * @return
+     *
+     * @param file 需要读取的文件
+     * @return String
      */
     public static String read(File file) {
 
@@ -208,7 +209,7 @@ public final class FileUtils {
     /**
      * 关闭文件流
      *
-     * @param out
+     * @param out 输出流
      */
     public static void close(OutputStream out) {
         if (out != null) {

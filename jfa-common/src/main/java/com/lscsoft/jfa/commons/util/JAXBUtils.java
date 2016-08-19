@@ -6,13 +6,20 @@ package com.lscsoft.jfa.commons.util;
 
 import com.lscsoft.jfa.commons.exception.DataAccessException;
 
-import javax.xml.bind.*;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBElement;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.lang.reflect.Method;
 
-
+/**
+ * JAXB常用的操作工具集锦
+ *
+ * @author Bond(China)
+ * @version 1.0.0
+ */
 public final class JAXBUtils {
 
     private JAXBUtils() {
@@ -24,10 +31,10 @@ public final class JAXBUtils {
      * @param clz    Class
      *               由xjc.bat生成
      * @param xmlDoc 数据文件
-     * @return
-     * @throws JAXBException
+     * @param <T>    未知类型
+     * @return 未知类型
+     * @throws DataAccessException DataAccessException
      */
-    @SuppressWarnings("unchecked")
     public static <T extends Object> T parseXmlDocument(Class<?> clz, File xmlDoc) throws DataAccessException {
 
         try {
@@ -44,11 +51,11 @@ public final class JAXBUtils {
     /**
      * 生成一个指定XML文档
      *
-     * @param t             T
-     * @param storeFileName
-     * @return
-     * @throws JAXBException
-     * @throws FileNotFoundException
+     * @param t             非确定类型JavaBean
+     * @param storeFileName 保存到的文件
+     * @param <T>           未知类型
+     * @return Boolean
+     * @throws DataAccessException 数据访问错误
      */
     public static <T extends Object> Boolean generalXmlDocument(T t, String storeFileName) throws DataAccessException {
         try {
@@ -70,10 +77,14 @@ public final class JAXBUtils {
         }
     }
 
-    /*
+    /**
      * 生成一个工厂对象,并创建JAXBElement对象
+     *
+     * @param o   对象
+     * @param <T> T 非确定类型JavaBean
+     * @return JAXBElement
+     * @throws DataAccessException DataAccessException
      */
-    @SuppressWarnings("unchecked")
     private static <T extends Object> JAXBElement<T> _invoke(Object o) throws DataAccessException {
         try {
             String pkg = o.getClass().getPackage().getName();

@@ -30,11 +30,13 @@ public class DatasourceConfig {
     public DataSource dataSource() {
 
         HikariConfig config = new HikariConfig();
+
         config.setDriverClassName(dataSourceProperties.getDriverClassName());
         config.setJdbcUrl(dataSourceProperties.getUrl());
         config.setUsername(dataSourceProperties.getUsername());
         config.setPassword(dataSourceProperties.getPassword());
         config.setAutoCommit(false);
+
         return new HikariDataSource(config);
     }
 
@@ -43,13 +45,20 @@ public class DatasourceConfig {
         return new DataSourceTransactionManager(dataSource());
     }
 
+    /**
+     * Get session info
+     * @return SqlSessionFactory
+     * @throws Exception Get Session Exception
+     */
     @Bean
     public SqlSessionFactory sqlSessionFactoryBean() throws Exception {
 
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
         sqlSessionFactoryBean.setDataSource(dataSource());
+
         PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
         sqlSessionFactoryBean.setMapperLocations(resolver.getResources("classpath:/com.jfa.data.mapper/*.xml"));
+
         return sqlSessionFactoryBean.getObject();
     }
 }

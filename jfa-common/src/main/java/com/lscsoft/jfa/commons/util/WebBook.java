@@ -20,6 +20,9 @@ import java.util.Map;
 
 /**
  * To Export data to a format file
+ *
+ * @author Bond(China)
+ * @version 1.0.0
  */
 public final class WebBook {
 
@@ -30,7 +33,7 @@ public final class WebBook {
     private String contentType;
 
     /**
-     * 需要导出的文件类型
+     * File type set
      */
     public enum FileType {
 
@@ -52,13 +55,27 @@ public final class WebBook {
     }
 
     /**
-     * 客户化导出
+     * Customize to template
      */
     public interface CustomizeWorkbook {
 
+        /**
+         * Orient extend with outside
+         *
+         * @param workbook 文档
+         * @return 文档
+         */
         Workbook customize(Workbook workbook);
     }
 
+    /**
+     * To Export
+     *
+     * @param templateFile 模板文件
+     * @param dataSource   数据源
+     * @param request      请求HttpServletRequest
+     * @param response     响应HttpServletResponse
+     */
     public void export(File templateFile, Map<String, Object> dataSource, HttpServletRequest request, HttpServletResponse response) {
 
         if (templateFile != null && !templateFile.exists()) {
@@ -93,6 +110,13 @@ public final class WebBook {
     }
 
 
+    /**
+     * To Export
+     *
+     * @param fileType          文件类型
+     * @param customizeWorkbook 客户化模板实例
+     * @param response          响应HttpServletResponse
+     */
     public void export(FileType fileType, CustomizeWorkbook customizeWorkbook, HttpServletResponse response) {
 
         InputStream in = null;
@@ -117,10 +141,20 @@ public final class WebBook {
         }
     }
 
+    /**
+     * Set FileName
+     *
+     * @param fileName 文件名
+     */
     public void setFileName(String fileName) {
         this.fileName = fileName;
     }
 
+    /**
+     * Set Content Type
+     *
+     * @param contentType ContentType
+     */
     public void setContentType(String contentType) {
         this.contentType = contentType;
     }

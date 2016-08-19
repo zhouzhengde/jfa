@@ -12,7 +12,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * Date Tools
+ * 日期的操作工具集锦
+ *
+ * @author Bond(China)
+ * @version 1.0.0
  */
 public final class DateUtils {
 
@@ -25,9 +28,9 @@ public final class DateUtils {
     /**
      * String to Date by pattern
      *
-     * @param date
-     * @param pattern
-     * @return
+     * @param date    Date对象
+     * @param pattern 格式化的模式
+     * @return Date
      */
     public static Date parse(String date, String pattern) {
 
@@ -43,9 +46,9 @@ public final class DateUtils {
     /**
      * Date to String by pattern
      *
-     * @param date
-     * @param pattern
-     * @return
+     * @param date    Date对象
+     * @param pattern 格式化的模式
+     * @return Date
      */
     public static String format(Date date, String pattern) {
 

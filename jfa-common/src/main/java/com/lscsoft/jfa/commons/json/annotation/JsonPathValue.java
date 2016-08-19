@@ -8,6 +8,9 @@ import java.lang.annotation.*;
 
 /**
  * Use to how to fast access object's attribute
+ *
+ * @author Bond(China)
+ * @version 1.0.0
  */
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)

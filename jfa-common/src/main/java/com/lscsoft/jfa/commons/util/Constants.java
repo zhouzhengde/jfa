@@ -4,6 +4,12 @@
 
 package com.lscsoft.jfa.commons.util;
 
+/**
+ * 常量类
+ *
+ * @author Bond(China)
+ * @version 1.0.0
+ */
 public interface Constants {
 
     // / ///////////REST///////////////

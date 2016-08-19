@@ -10,7 +10,7 @@ import java.util.Date;
 /**
  * Base Entity for commonly attributes
  */
-public class BaseEntity implements Serializable{
+public class BaseEntity implements Serializable {
 
     private Date createDate;
 
@@ -19,6 +19,26 @@ public class BaseEntity implements Serializable{
     private String createBy;
 
     private String updateBy;
+
+    private int startIndex;
+
+    private int pageSize;
+
+    public int getPageSize() {
+        return pageSize;
+    }
+
+    public void setPageSize(int pageSize) {
+        this.pageSize = pageSize;
+    }
+
+    public int getStartIndex() {
+        return startIndex;
+    }
+
+    public void setStartIndex(int startIndex) {
+        this.startIndex = startIndex;
+    }
 
     public Date getCreateDate() {
         return createDate;

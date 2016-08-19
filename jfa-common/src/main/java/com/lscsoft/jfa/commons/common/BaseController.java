@@ -18,8 +18,8 @@ public abstract class BaseController {
     /**
      * 加入结果
      *
-     * @param key
-     * @param value
+     * @param key   KEY
+     * @param value Value
      */
     protected void put(String key, Object value) {
         ResultMap.put(key, value);
@@ -28,7 +28,7 @@ public abstract class BaseController {
     /**
      * 加入结果，其KEY为result
      *
-     * @param val
+     * @param val Value
      */
     protected void put(Object val) {
         ResultMap.put(val);
@@ -37,7 +37,7 @@ public abstract class BaseController {
     /**
      * 设置成功的结果
      *
-     * @return
+     * @return Map
      */
     protected Map<String, Object> success() {
         return ResultMap.success();
@@ -46,7 +46,8 @@ public abstract class BaseController {
     /**
      * 设置成功的结果
      *
-     * @return
+     * @param value Value
+     * @return Map
      */
     protected Map<String, Object> success(Object value) {
         put(value);
@@ -56,7 +57,9 @@ public abstract class BaseController {
     /**
      * 设置成功的结果
      *
-     * @return
+     * @param key   KEY
+     * @param value Value
+     * @return Map
      */
     protected Map<String, Object> success(String key, Object value) {
         put(key, value);
@@ -66,7 +69,8 @@ public abstract class BaseController {
     /**
      * 设置失败的结果
      *
-     * @return
+     * @param e An exception
+     * @return Map
      */
     protected Map<String, Object> failure(Exception e) {
         return ResultMap.failure(e);
@@ -75,7 +79,9 @@ public abstract class BaseController {
     /**
      * 设置失败的结果
      *
-     * @return
+     * @param message Message
+     * @param e       An exception
+     * @return Map
      */
     protected Map<String, Object> failure(String message, Exception e) {
         return ResultMap.failure(message, e);
@@ -84,7 +90,10 @@ public abstract class BaseController {
     /**
      * 设置失败的结果
      *
-     * @return
+     * @param code    Code
+     * @param message Message
+     * @param e       An exception
+     * @return Map
      */
     protected Map<String, Object> failure(String code, String message, Exception e) {
         return ResultMap.failure(code, message, e);

@@ -11,8 +11,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="jfa-common" />
-    <orderEntry type="module" module-name="jfa-runner" />
+    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.38" level="project" />
+    <orderEntry type="library" name="Maven: com.lsc-soft:jfa-common:1.0.0.SNAPSHOTS" level="project" />
+    <orderEntry type="library" name="Maven: com.lsc-soft:jfa-runner:1.0.0.SNAPSHOTS" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context:4.2.5.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-core:4.2.5.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: net.sf.jxls:jxls-reader:1.0.6" level="project" />

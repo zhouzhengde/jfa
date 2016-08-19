@@ -3,8 +3,10 @@ package com.lscsoft.jfa.commons.util;
 import org.apache.commons.lang.StringUtils;
 
 /**
- * @author Created by Admin on 2016/7/6.
- * @copyright ${copyright}
+ * 常用的操作工具集锦
+ *
+ * @author Bond(China)
+ * @version 1.0.0
  */
 public final class $ {
 
@@ -14,8 +16,8 @@ public final class $ {
     /**
      * 判断是否为空
      *
-     * @param object
-     * @return
+     * @param object 需要被判定的对象
+     * @return Boolean
      */
     public static boolean isNull(Object object) {
         return object == null;
@@ -34,9 +36,9 @@ public final class $ {
     /**
      * 是否相等
      *
-     * @param v1
-     * @param v2
-     * @return
+     * @param v1 Value1
+     * @param v2 Value2
+     * @return Boolean
      */
     public static boolean isEqual(Integer v1, Integer v2) {
 
@@ -49,9 +51,9 @@ public final class $ {
     /**
      * 是否相等
      *
-     * @param v1
-     * @param v2
-     * @return
+     * @param v1 Value1
+     * @param v2 Value2
+     * @return Boolean
      */
     public static boolean isEqual(Long v1, Long v2) {
 
@@ -64,9 +66,9 @@ public final class $ {
     /**
      * 是否相等
      *
-     * @param v1
-     * @param v2
-     * @return
+     * @param v1 Value1
+     * @param v2 Value2
+     * @return Boolean
      */
     public static boolean isEqual(String v1, String v2) {
 
